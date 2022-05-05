@@ -33,7 +33,7 @@ fun SplashScreen(navController: NavController, viewModel: MainViewModel) {
     LaunchedEffect(key1 = true) {
         startAnimate = true
         viewModel.getAllMovies()
-        delay(3000)
+        delay(3000L)
         navController.popBackStack()
         navController.navigate(Screens.Main.route)
     }
