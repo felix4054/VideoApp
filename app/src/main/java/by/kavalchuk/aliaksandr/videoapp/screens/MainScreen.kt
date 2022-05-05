@@ -56,10 +56,8 @@ fun MovieItem(item: Movies, navController: NavController) {
             Image(
                 painter = rememberImagePainter(item.image.medium),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(128.dp)
+                modifier = Modifier.size(128.dp)
             )
-
             Column {
                 Text(
                     text = item.name,
