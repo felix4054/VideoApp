@@ -3,6 +3,7 @@ package by.kavalchuk.aliaksandr.videoapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -10,7 +11,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
+import by.kavalchuk.aliaksandr.videoapp.data.models.Movies
 import by.kavalchuk.aliaksandr.videoapp.navigation.SetupNavHost
 import by.kavalchuk.aliaksandr.videoapp.screens.MainScreen
 import by.kavalchuk.aliaksandr.videoapp.ui.theme.VideoAppTheme
@@ -23,17 +26,25 @@ class MainActivity : ComponentActivity() {
         setContent {
             VideoAppTheme {
                 val navController = rememberNavController()
-                SetupNavHost(navController = navController)
+                val viewModel = hiltViewModel<MainViewModel>()
+                SetupNavHost(navController = navController, viewModel = viewModel)
             }
         }
     }
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    VideoAppTheme {
-        MainScreen()
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
